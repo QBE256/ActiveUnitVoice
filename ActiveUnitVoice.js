@@ -97,13 +97,23 @@ PlayerTurn._playActiveUnitVoice = function() {
 
 	hpRate = this._targetUnit.getHp() / ParamBonus.getMhp(this._targetUnit);
 
-	if (hpRate > 0.5  && ('full' in this._targetUnit.custom.activeVoice)) {
+	if (
+		hpRate > 0.5 &&
+		('full' in this._targetUnit.custom.activeVoice)
+	) {
 		fileName = this._targetUnit.custom.activeVoice.full;
 	}
-	else if (hpRate > 0.25 && hpRate <= 0.5 && ('half' in this._targetUnit.custom.activeVoice)) {
+	else if (
+		hpRate > 0.25 &&
+		hpRate <= 0.5 &&
+		('half' in this._targetUnit.custom.activeVoice)
+	) {
 		fileName = this._targetUnit.custom.activeVoice.half;
 	}
-	else if (hpRate <= 0.25 && ('quarter' in this._targetUnit.custom.activeVoice)) {
+	else if (
+		hpRate <= 0.25 &&
+		('quarter' in this._targetUnit.custom.activeVoice)
+	) {
 		fileName = this._targetUnit.custom.activeVoice.quarter;
 	}
 	else {
